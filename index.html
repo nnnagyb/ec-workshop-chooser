@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Chooser</title>
+    <link rel="stylesheet" href="style.css">
+    <script src = "script.js"></script>
+</head>
+<body>
+<!-- <h2 class = "header">Találd meg a neked való műhelyt!</h2> -->
+
+<div class="top-bar flex-container">
+    <button class = "tab-button flex-item" onclick="openTab('btk', 'tab')">
+    BTK</button>
+    <button class = "tab-button flex-item" onclick="openTab('ttk', 'tab')">
+    TTK</button>
+    <button class = "tab-button flex-item" onclick="openTab('tatk', 'tab')">
+    TáTK</button>
+    <button class = "tab-button flex-item" onclick="openTab('ik', 'tab')">
+    IK</button>
+    <button class = "tab-button flex-item" onclick="openTab('gtk', 'tab')">
+    GTK</button>
+</div>
+
+<div id = "btk" class = "tab">
+    <div class = "flex-container">
+        <div class = "inner-buttons flex-container column">
+            <button class = "tab-button flex-item" onclick="openTab('angol', 'btk-tab')">
+            Angol</button>
+            <button class = "tab-button flex-item" onclick="openTab('klasszfil', 'btk-tab')">
+            Klasszfil</button>
+        </div>
+
+        <div class = "inner-text">
+            <div id = "angol" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+            <div id = "klasszfil" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id = "ttk" class = "tab" style="display:none">
+    <p>Lorem ipsum</p>
+</div>
+<div id = "ik" class = "tab" style="display:none">
+    <p>Lorem ipsum dolore</p>
+</div>
+<div id = "tatk" class = "tab" style="display:none">
+    <p>Lorem ipsum asfaegaegajkajfjaW</p>
+</div>
+<div id = "gtk" class = "tab" style="display:none">
+    <p>123123123123</p>
+</div>
+
+
+
+</body>
+</html>
