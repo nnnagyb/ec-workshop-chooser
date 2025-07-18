@@ -9,31 +9,35 @@
 </head>
 <body>
 <!-- <h2 class = "header">Találd meg a neked való műhelyt!</h2> -->
+<!-- Top bar -->
 
-<div class="top-bar flex-container">
-    <button class = "tab-button flex-item" onclick="openTab('btk', 'tab')">
-    BTK</button>
-    <button class = "tab-button flex-item" onclick="openTab('ttk', 'tab')">
-    TTK</button>
-    <button class = "tab-button flex-item" onclick="openTab('tatk', 'tab')">
-    TáTK</button>
-    <button class = "tab-button flex-item" onclick="openTab('ik', 'tab')">
-    IK</button>
-    <button class = "tab-button flex-item" onclick="openTab('gtk', 'tab')">
-    GTK</button>
+<div class = "flex-container">
+    <div class="top-bar flex-container">
+        <button class = "tab-button flex-item" id = "btk-button" onclick="openTab('btk', 'tab')">
+        BTK</button>
+        <button class = "tab-button flex-item" id = "ttk-button" onclick="openTab('ttk', 'tab')">
+        TTK</button>
+        <button class = "tab-button flex-item" id = "tatk-button" onclick="openTab('tatk', 'tab')">
+        TáTK</button>
+        <button class = "tab-button flex-item" id = "ik-button" onclick="openTab('ik', 'tab')">
+        IK</button>
+        <button class = "tab-button flex-item" id = "gtk-button" onclick="openTab('gtk', 'tab')">
+        GTK</button>
+    </div>
 </div>
 
-<div id = "btk" class = "tab">
-    <div class = "flex-container">
+<!-- Dropdown -->
+<div class = "flex-container">
+    <div id = "btk" class = "tab flex-container">
         <div class = "inner-buttons flex-container column">
-            <button class = "tab-button flex-item" onclick="openTab('angol', 'btk-tab')">
+            <button class = "btk-tab-button tab-button flex-item" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
             Angol</button>
-            <button class = "tab-button flex-item" onclick="openTab('klasszfil', 'btk-tab')">
+            <button class = "btk-tab-button tab-button flex-item" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
             Klasszfil</button>
         </div>
 
         <div class = "inner-text">
-            <div id = "angol" class = "btk-tab" style="display:none">
+            <div id = "angol" class = "btk-tab" style="display:flex">
                 <p>Lorem ipsum</p>
             </div>
             <div id = "klasszfil" class = "btk-tab" style="display:none">
@@ -41,24 +45,18 @@
             </div>
         </div>
     </div>
+    <div id = "ttk" class = "tab" style="display:none">
+        <p>Lorem ipsum</p>
+    </div>
+    <div id = "ik" class = "tab" style="display:none">
+        <p>Lorem ipsum dolore</p>
+    </div>
+    <div id = "tatk" class = "tab" style="display:none">
+        <p>Lorem ipsum asfaegaegajkajfjaW</p>
+    </div>
+    <div id = "gtk" class = "tab" style="display:none">
+        <p>123123123123</p>
+    </div>
 </div>
-
-
-
-<div id = "ttk" class = "tab" style="display:none">
-    <p>Lorem ipsum</p>
-</div>
-<div id = "ik" class = "tab" style="display:none">
-    <p>Lorem ipsum dolore</p>
-</div>
-<div id = "tatk" class = "tab" style="display:none">
-    <p>Lorem ipsum asfaegaegajkajfjaW</p>
-</div>
-<div id = "gtk" class = "tab" style="display:none">
-    <p>123123123123</p>
-</div>
-
-
-
 </body>
 </html>
