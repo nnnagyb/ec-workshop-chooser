@@ -4,15 +4,14 @@ body {
         url('https://eotvos.elte.hu/media/fc/11/257544e519a2664bfd490790e70cb5bb85ad16d25e105ad43472660f9b15/ec-coli-thumb.jpg');
     background-repeat:no-repeat;
     background-size: cover;
-    margin: 0;
+    height: 500px;
 }
 * {
-    margin: 10px;
     /* outline: 1px dotted red; */
     color:aliceblue;
 }
 .flex-container {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -22,26 +21,47 @@ body {
 .flex-item {
     flex: 1 1 0px;
 }
+.header {
+    font-size: 20px;
+    margin: 30px 0 0 30px;
+    font-weight: 600;
+}
 button {
     all: unset;
-    font-family: sans-serif;
-    font-size: 20px;
-    background-color: #012850;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
     color:aliceblue;
     min-width: 100px;
     min-height: 40px;
     margin: 10px;
     text-align: center;
+    border-radius: 8px;
 }
-
+.top-bar button {
+    font-size: 20px;
+}
+.border {
+    color:inherit;
+    border-bottom:1px solid;
+    border-color:inherit;
+    width: 50px;
+    align-self: center;
+}
+#dropdown .border {
+    width: 70px;
+}
 .active {
     color:gold;
+    font-weight: 700;
+    transition-duration: 1s;
+    border-color:gold;
 }
 
 .top-bar,
 .tab {
     align-content: space-between;
     flex: 0 1 800px;
+    margin:10px;
 }
 .inner-buttons {
     flex: 1 1 80px;

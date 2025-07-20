@@ -8,32 +8,32 @@
     <script src = "script.js"></script>
 </head>
 <body>
-<!-- <h2 class = "header">Találd meg a neked való műhelyt!</h2> -->
+<div class = "header">Találd meg a neked való műhelyünket!</div>
 <!-- Top bar -->
 
 <div class = "flex-container">
     <div class="top-bar flex-container">
-        <button class = "tab-button flex-item" id = "btk-button" onclick="openTab('btk', 'tab')">
-        BTK</button>
-        <button class = "tab-button flex-item" id = "ttk-button" onclick="openTab('ttk', 'tab')">
-        TTK</button>
-        <button class = "tab-button flex-item" id = "tatk-button" onclick="openTab('tatk', 'tab')">
-        TáTK</button>
-        <button class = "tab-button flex-item" id = "ik-button" onclick="openTab('ik', 'tab')">
-        IK</button>
-        <button class = "tab-button flex-item" id = "gtk-button" onclick="openTab('gtk', 'tab')">
-        GTK</button>
+        <button class = "tab-button flex-item flex-container" id = "btk-button" onclick="openTab('btk', 'tab')">
+        <div class = "border">BTK</div></button>
+        <button class = "tab-button flex-item flex-container" id = "ttk-button" onclick="openTab('ttk', 'tab')">
+        <div class = "border">TTK</div></button>
+        <button class = "tab-button flex-item flex-container" id = "tatk-button" onclick="openTab('tatk', 'tab')">
+        <div class = "border">TáTK</div></button>
+        <button class = "tab-button flex-item flex-container" id = "ik-button" onclick="openTab('ik', 'tab')">
+        <div class = "border">IK</div></button>
+        <button class = "tab-button flex-item flex-container" id = "gtk-button" onclick="openTab('gtk', 'tab')">
+        <div class = "border">GTK</div></button>
     </div>
 </div>
 
 <!-- Dropdown -->
-<div class = "flex-container">
+<div class = "flex-container" id = "dropdown">
     <div id = "btk" class = "tab flex-container">
         <div class = "inner-buttons flex-container column">
-            <button class = "btk-tab-button tab-button flex-item" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
-            Angol</button>
-            <button class = "btk-tab-button tab-button flex-item" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
-            Klasszfil</button>
+            <button class = "btk-tab-button flex-item flex-container" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
+            <div class = "border">Angol</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
+            <div class = "border">Klasszfil</div></button>
         </div>
 
         <div class = "inner-text">
