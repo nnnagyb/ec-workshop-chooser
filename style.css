@@ -7,7 +7,7 @@ body {
     height: 500px;
 }
 * {
-    /* outline: 1px dotted red; */
+    outline: 1px dotted red;
     color:aliceblue;
 }
 .flex-container {
@@ -17,25 +17,29 @@ body {
 }
 .column {
     flex-direction: column;
+    flex-wrap: wrap;
+    height: 300px;
 }
 .flex-item {
     flex: 1 1 0px;
 }
 .header {
     font-size: 20px;
-    margin: 30px 0 0 30px;
     font-weight: 600;
+    justify-content: left;
+    width: 800px;
 }
 button {
     all: unset;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', monospace;
     font-size: 16px;
     color:aliceblue;
-    min-width: 100px;
-    min-height: 40px;
+    min-width: 80px;
+    min-height: 30px;
     margin: 10px;
     text-align: center;
     border-radius: 8px;
+    font-weight: bold;
 }
 .top-bar button {
     font-size: 20px;
@@ -50,13 +54,15 @@ button {
 #dropdown .border {
     width: 70px;
 }
+.top-bar {
+    letter-spacing: 1px;
+}
 .active {
     color:gold;
-    font-weight: 700;
+    font-weight: 800;
     transition-duration: 1s;
     border-color:gold;
 }
-
 .top-bar,
 .tab {
     align-content: space-between;
@@ -64,8 +70,17 @@ button {
     margin:10px;
 }
 .inner-buttons {
-    flex: 1 1 80px;
+    flex: 0 0 200px;
 }
 .inner-text {
-    flex: 4 4 400px;
+    flex: 1 1 400px;
+}
+
+
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/open-sans-v43-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

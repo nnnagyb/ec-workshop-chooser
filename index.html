@@ -8,7 +8,13 @@
     <script src = "script.js"></script>
 </head>
 <body>
-<div class = "header">Találd meg a neked való műhelyünket!</div>
+
+<!-- Small header -->
+<div class = "flex-container">
+    <div class = "header">Találd meg a neked való műhelyünket!</div>
+</div>
+
+
 <!-- Top bar -->
 
 <div class = "flex-container">
@@ -26,36 +32,145 @@
     </div>
 </div>
 
+
 <!-- Dropdown -->
 <div class = "flex-container" id = "dropdown">
-    <div id = "btk" class = "tab flex-container">
+
+    <!-- BTK -->
+    <div id = "btk" class = "tab flex-container" id = "btk-button-wrapper">
         <div class = "inner-buttons flex-container column">
             <button class = "btk-tab-button flex-item flex-container" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
             <div class = "border">Angol</div></button>
             <button class = "btk-tab-button flex-item flex-container" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
             <div class = "border">Klasszfil</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "filozofia-button" onclick="openTab('filozofia', 'btk-tab')">
+            <div class = "border">Filozófia</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "francia-button" onclick="openTab('francia', 'btk-tab')">
+            <div class = "border">Francia</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "german-button" onclick="openTab('german', 'btk-tab')">
+            <div class = "border">Germán</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "magyar-button" onclick="openTab('magyar', 'btk-tab')">
+            <div class = "border">Magyar</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "olasz-button" onclick="openTab('olasz', 'btk-tab')">
+            <div class = "border">Olasz</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "orient-button" onclick="openTab('orient', 'btk-tab')">
+            <div class = "border">Orient</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "skandi-button" onclick="openTab('skandi', 'btk-tab')">
+            <div class = "border">Skandi</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "spanyol-button" onclick="openTab('spanyol', 'btk-tab')">
+            <div class = "border">Spanyol</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "szlav-button" onclick="openTab('szlav', 'btk-tab')">
+            <div class = "border">Szláv</div></button>
+            <button class = "btk-tab-button flex-item flex-container" id = "tort-button" onclick="openTab('tort', 'btk-tab')">
+            <div class = "border">Tört</div></button>
         </div>
 
         <div class = "inner-text">
-            <div id = "angol" class = "btk-tab" style="display:flex">
+            <div id = "angol" class = "btk-tab" style="display:none">
                 <p>Lorem ipsum</p>
             </div>
             <div id = "klasszfil" class = "btk-tab" style="display:none">
                 <p>Lorem ipsum dolore</p>
             </div>
+            <div id = "filozofia" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "francia" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "german" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "magyar" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "olasz" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "orient" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "skandi" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "spanyol" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum doloeafwrstndnre</p>
+            </div>
+            <div id = "szlav" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
+            <div id = "tort" class = "btk-tab" style="display:none">
+                <p>Lorem ipsum dolore</p>
+            </div>
         </div>
     </div>
+
+
+    <!-- TTK -->
     <div id = "ttk" class = "tab" style="display:none">
-        <p>Lorem ipsum</p>
+        <div class = "inner-buttons flex-container column">
+            <button class = "ttk-tab-button flex-item flex-container" id = "bikem-button" onclick="openTab('bikem', 'ttk-tab')">
+            <div class = "border">Bikém</div></button>
+            <button class = "ttk-tab-button flex-item flex-container" id = "matfiz-button" onclick="openTab('matfiz', 'ttk-tab')">
+            <div class = "border">Matfiz</div></button>
+            <button class = "ttk-tab-button flex-item flex-container" id = "mendol-button" onclick="openTab('mendol', 'ttk-tab')">
+            <div class = "border">Mendöl</div></button>
+        </div>
+
+        <div class = "inner-text">
+            <div id = "bikem" class = "ttk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+            <div id = "matfiz" class = "ttk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+            <div id = "mendol" class = "ttk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
     </div>
+
+
+    <!-- IK -->
     <div id = "ik" class = "tab" style="display:none">
-        <p>Lorem ipsum dolore</p>
+        <div class = "inner-buttons flex-container column">
+            <button class = "ik-tab-button flex-item flex-container" id = "info-button" onclick="openTab('info', 'ik-tab')">
+            <div class = "border">Infó</div></button>
+        </div>
+
+        <div class = "inner-text">
+            <div id = "info" class = "ik-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
     </div>
+
+    <!-- TáTK -->
     <div id = "tatk" class = "tab" style="display:none">
-        <p>Lorem ipsum asfaegaegajkajfjaW</p>
+        <div class = "inner-buttons flex-container column">
+            <button class = "tatk-tab-button flex-item flex-container" id = "tarstud-button" onclick="openTab('tarstud', 'tatk-tab')">
+            <div class = "border">Társtud</div></button>
+        </div>
+
+        <div class = "inner-text">
+            <div id = "tarstud" class = "tatk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
     </div>
+
+    <!-- GTK -->
     <div id = "gtk" class = "tab" style="display:none">
-        <p>123123123123</p>
+        <div class = "inner-buttons flex-container column">
+            <button class = "gtk-tab-button flex-item flex-container" id = "gazdtud-button" onclick="openTab('gazdtud', 'gtk-tab')">
+            <div class = "border">Gazdtud</div></button>
+        </div>
+
+        <div class = "inner-text">
+            <div id = "gazdtud" class = "gtk-tab" style="display:none">
+                <p>Lorem ipsum</p>
+            </div>
+        </div>
     </div>
 </div>
 </body>
