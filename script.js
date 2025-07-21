@@ -8,8 +8,6 @@ function openTab(tabID, closeGroup) {
   for (i = 0; i < y.length; i++) {
     y[i].classList.remove("active");
   }
-  console.log(tabID);
-  console.log(closeGroup);
   document.getElementById(tabID).style.display = "flex";
   document.getElementById(tabID + "-button").classList.add("active");
 
