@@ -1,0 +1,348 @@
+<!--START_OF_COLLEGI--><!--V9-->
+<style type="text/css">:root {
+ --textColor: #523e27;
+ --headerColor: #d4942f;
+ --menuColor: #bc9632;
+ --footerColor: #2f251a;
+ --linkColor: #f0a900;
+ --linkHoveColor: ;
+}
+.breadcrumb,
+.desktop-header-nav {
+ background-color: var(--menuColor) !important;
+}
+.footer-wrapper {
+ background-color: var(--footerColor) !important;
+}
+.header-wrapper .desktop-header-banner .banner-wrapper .banner-nav-wrapper .banner-navs .menu-item:hover,
+.header-wrapper .desktop-header-banner .banner-wrapper .banner-nav-wrapper .banner-navs .menu-item:focus,
+.header-wrapper .desktop-header-banner .banner-wrapper .banner-nav-wrapper .banner-navs .menu-item.active,
+.header-wrapper .desktop-header-banner .banner-wrapper .banner-nav-wrapper .banner-navs .menu-item .sub-menu-wrapper,
+.header-wrapper .banner-wrapper-tablet .banner-nav-wrapper .banner-navs .menu-item:hover,
+.header-wrapper .banner-wrapper-tablet .banner-nav-wrapper .banner-navs .menu-item:focus,
+.header-wrapper .banner-wrapper-tablet .banner-nav-wrapper .banner-navs .menu-item.active,
+.header-wrapper .banner-wrapper-tablet .banner-nav-wrapper .banner-navs .menu-item .sub-menu-wrapper,
+.header-wrapper .desktop-header-banner .banner-wrapper .banner-nav-wrapper .banner-navs .menu-item a:focus,
+.header-wrapper .mobile-menu .mobile-menus:hover,
+.header-wrapper .mobile-menu .mobile-menus:focus,
+.header-wrapper .mobile-menu .mobile-menus {
+ background-color: var(--headerColor) !important;
+}
+.header-wrapper .burger-container button.hamburger.opened:after {
+ border-bottom-color: var(--headerColor) !important;
+}
+.academic-title,
+.title,
+h1,
+h2,
+h4,
+h5,
+h6,
+strong,
+b,
+.endpage-wrapper blockquote p,
+.fa-user,
+.fa-youtube,
+.fa-instagram,
+.fa-facebook,
+.header-wrapper .burger-container button.hamburger i,
+.fa-arrow-right,
+.header-wrapper .search-container i,
+.standalone-start-date,
+.events-wrapper .last-menu-wrapper.mobile-submenu-wrapper .burger-container button.sub-hamburger i {
+ color: var(--textColor) !important;
+}
+.endpage-wrapper blockquote {
+ color: var(--textColor) !important;
+ border-color: var(--textColor) !important;
+}
+main a:any-link {
+ color: var(--linkColor);
+ transition: 300ms !important;
+}
+main a:hover {
+ color: var(--linkHoveColor) !important;
+}
+/*the submenu links*/
+main ul.submenus a {
+  color: black !important;
+}
+/*the header*/
+div.desktop-header-banner {
+  background-color: white !important;
+}
+/*header links*/
+div.desktop-header-banner a {
+  color: black !important;
+}
+/*ELTE logo*/
+div.desktop-header-banner img.header-banner-image {
+  filter: invert(1);
+}
+/*EC logo*/
+div.banner-container img.header-banner-image[src="https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png"] {
+  margin: 0 15px;
+  filter: none;
+}
+h3,
+th {
+ background-color: var(--textColor) !important;
+ color: white !important;
+ animation-duration: 200ms;
+}
+table,
+table tr td {
+ border-collapse: collapse;
+ border: 1px solid var(--textColor);
+}
+hr {
+ border-top-color: var(--textColor) !important;
+}
+body .page-wrapper .index-news .news-block-wrapper .news-block .text-wrapper {
+ background-color: rgba(212, 148, 47, 0.91) !important;
+}
+.eventend-title .event-start-date {
+ color: var(--textColor) !important;
+}
+.events-wrapper .last-menu-wrapper.mobile-submenu-wrapper .burger-container button.sub-hamburger.opened:after {
+ border-bottom-color: var(--menuColor) !important;
+}
+events-wrapper .last-menu-wrapper.mobile-submenu-wrapper .burger-container button.sub-hamburger i {
+ color:var(--textColor) !important;
+}
+.events-wrapper .sub-menus-wrapper,
+.events-wrapper .sub-menus-wrapper li {
+ background-color: var(--menuColor) !important;
+}
+.events-wrapper .sub-menus-wrapper .submenus.mobile-submenus .last-menu a {
+ color: #ffffff !important;
+}
+.academic-header .banner-container a .academic-title {
+ margin-left: 185px !important;
+}
+.header-wrapper.sticky-header .desktop-header-banner .banner-wrapper .banner-container a .academic-title {
+ margin-left: 102px !important;
+}
+.academic-header .banner-container a .header-banner-image:nth-child(2) {
+ left:87px !important;
+}
+.header-wrapper.sticky-header .desktop-header-banner .banner-wrapper .banner-container a img.header-banner-image:nth-child(2) {
+ left:50px !important;
+}
+@media (max-width:380px) {
+ .header-wrapper .academic-title {
+  display:none !important;
+ }
+}
+/* for the title row */
+.events-wrapper h1.last-menu-wrapper {
+  background-color: #242851;
+  color: white !important;
+}
+/* to fix the grey colour of the mobile menus */
+.events-wrapper .sub-menus-wrapper ul.submenus.mobile-submenus {
+  background-color: unset;
+}
+</style>
+<script>
+console.log("Hello World");
+for (let n of Array.from(document.querySelectorAll('.header-banner-image'))) {
+	let t=document.createElement('img');
+	t.src='https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png';
+	t.className='header-banner-image';
+	n.parentNode.insertBefore(t,n.nextSibling);
+};
+/*
+for (let e of Array.from(document.querySelectorAll('.header-banner-image'))){
+	e.src="https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png"
+};
+*/
+document.querySelector("link[rel*='icon']").href="https://eotvos.elte.hu/media/da/30/e9a7dd3606d1cf1b44a674b6b3f4d7b52638a8a0cdc56526c14c0010e4c0/ec_logo.png";
+</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script><script>
+jQuery(window).load(function(){
+	document.querySelectorAll('.footer-block').forEach(elem=>{
+		if (elem.innerHTML.indexOf("Loginet") !==-1){
+			elem.innerHTML='<p class="icon-call-end" style="display:inline;float:left;">&nbsp;</p><p>+36-1-460-4481</p><p class="icon-envelope" style="display:inline;float:left;">&nbsp;</p><p>titkarsag@eotvos.elte.hu</p><p class="icon-directions" style="display:inline;float:left;">&nbsp;</p><p>1118 Budapest, Ménesi út 11-13.</p><br><p> Minden jog fenntartva</p></div>';
+		}
+	})
+});
+</script><!--END_OF_COLLEGI-->
+
+
+
+<!-- HTML begin -->
+
+<p><em>Az itt leírt információk csak irányadó jellegűek, pontos információkért olvasd el a felvételi menetéről rendelkező <a href="https://eotvos.elte.hu/dstore/document/7443/CTSZK_ready.pdf">szabályzatunkat</a>.</em></p>
+
+<h2>A Collegiumról</h2>
+
+<h3>1. Mitől más egy szakkollégium, mint a többi kollégium?</h3>
+
+<p>Fontos, hogy az Eötvös Collegium szakkollégium, nem szociális kollégium. A szociális kollégiumokba a Neptunban kell jelentkezni; aszerint kapsz helyet, hogy mennyire élsz távol, hány testvéred van, mennyit keresnek a szüleid stb. Évente kell jelentkezned; mindamellett teljesen esetleges, hogy kikkel kerülsz össze.</p>
+
+<p>A <strong>szakkollégium</strong> nem egyszerűen egy lakóhely, hanem az egyetemi tehetséggondozás egyik intézménye. Ha egy szakkollégium tagja vagy, akkor az egyetemi képzéseden túl extrakurzusokon vehetsz részt, és egy összetartó szakmai közösség tagja lehetsz. A felvételi eljárás is egyedi módon történik, függetlenül a többi szociális vagy szakkollégiumoktól.</p>
+
+<p>Az Eötvös Collegium az ELTE egyik szakkollégiuma. Intézményünkbe az ELTE BTK, GTK, IK, TáTK és TTK hallgatóit várjuk.</p>
+
+<p><em>Az ELTE-n számos másik szakkollégium is működik, amelyek más érdeklődésű, más karra járó hallgatókat várnak intézményükbe. Ezekről részletesebben az ELTE honlap <a href = "https://www.elte.hu/tehetseggondozas/szakkollegiumok">erről szóló cikkjében</a> olvashatsz.</em></p>
+
+<h3>2. Mi a különbség a bentlakó és bejáró státuszok között?</h3>
+
+<p>A Collegium épületében lakó Collegistákat <em>bentlakónak</em> nevezzük. A Collegiumba viszont akkor is jelentkezhetsz, ha a közelben laksz, vagy egyéb okból nem szeretnél itt lakni.</p>
+
+<p><em>Bejáróként</em> teljes jogú tag leszel (tehát részt vehetsz az összes szakmai és közösségi programon), összesen lakhatásod nem lesz a Collegiumban.</p>
+
+<h3>3. Mennyibe kerül a Collegium?</h3>
+
+<p>A bentlakóknak havi 15.320 Ft a collegiumi díj.</p>
+
+<h3>4. Milyen messze van a Collegium az egyetemtől?</h3>
+
+<p>A Collegiumtól 3 perc séta a Móricz Zsigmond körtér, ahonnan az ELTE Lágymányosi Campus (IK, TTK, TáTK) és a BTK, PPK, GTK is átszállás nélkül, 10-20 perc alatt elérhető. Lágymányosra gyalog is be lehet érni kb. 25 perc alatt.</p>
+
+<h3>5. Ki vezeti a Collegiumot?</h3>
+
+<p>Alapvetően az igazgató, de az összcollegiumi közösségi és szakmai programok a Választmány szervezi, a műhely életét pedig a műhelyvezető és a (collegista) műhelytitkár. Részletekért lásd a <a href= "https://eotvos.elte.hu/collegium/mukodes/szervezeti-felepites">szervezeti felépítésről szóló írásunkat</a>.</p>
+
+<h2>Szakmaiság, tanulás</h2>
+
+<p><em>Részletekért olvasd el a <a href="http://eotvos.elte.hu/szakmai-munka">Szakmaiság</a>&nbsp;oldalt és a műhelyek oldalát&nbsp;is.</em></p>
+
+<h3>6. Miket fogok tanulni a szakkollégiumban?</h3>
+
+<p>A Collegiumban az egyetemi szakjaidnak megfelelő műhely(ek) tagjává válsz. Itt a műhelyed kurzusain vehetsz rész, melyek többnyire egy témát részletesen feldolgozó foglalkozások, kutató szemináriumok, de sok fajta kurzus szokott megvalósulni (részletes információért és példákért lásd: A műhelyek követelményei, Műhelyek). Esetenként kérésre más műhely kurzusain is részt vehetsz.</p>
+
+<p>A műhelykurzusok emellett az <em>ALFONSÓ</em>-program keretében nyelvet tanulhatsz a Collegium által biztosított nyelvórákon (lásd: ALFONSÓ-program).</p>
+
+<h3>7. Mik a követelmények?</h3>
+
+<p>A collegiumi tagság megtartása érdekében minden Collegista köteles minden félévben</p>
+
+<ul>
+    <li>4,25 feletti hagyományos egyetemi átlagot tartani,</li>
+    <li>részt venni a saját műhelye meghirdetett kurzusai egyikén,</li>
+    <li>részt venni az ALFONSÓ-program keretében választott nyelvi kurzusán, amíg a követelményeket nem teljesítette,</li>
+    <li>részt venni a CHÖK Közgyűlésén.</li>
+</ul>
+
+<p>A műhelyeknek esetenként lehetnek egyéni követelményei, pl. kutatómunkára vagy műhelykonferencia-részvételre vonatkozóan; ezeket a műhely saját szabályzata részletezi.</p>
+
+
+<p><em>A műhelyekről bővebben a <a href="https://eotvos.elte.hu/szakmai-munka/muhelyek">Műhelyek</a>&nbsp;pont alatt olvashatsz.</em></p>
+
+<h3>8. Jelentkezhetek, ha tanáris vagyok?</h3>
+
+<p>Gyere bátran! A Collegiumban nagy hagyománya van a tanárképzésnek. A felvételi során jelentkezhetsz bármely szakodnak megfelelő műhelybe, vagy akár mindkettőbe is. Collegistaként pedig lehetőséged nyílik mindkét műhely óráit látogatni.</p>
+
+<h3>9. Mikor vannak a collegiumi órák, hogy tudom ezt összeegyeztetni az egyetemmel?</h3>
+
+<p>Általában hétköznap reggel, késő délután vagy este, többnyire a Collegium épületében. A műhelyórák a hallgatótársaiddal együtt történnek, időpontjait minden szemeszter elején egyeztetitek, amikor már kialakult az egyetemi órarend. Senkinek sem érdeke, hogy ilyen problémák miatt ne tudj részt venni a collegiumi kurzusokon.</p>
+
+<h3>10. Hogy zajlik a nyelvoktatás; mik a részletek?</h3>
+
+<p>Minden collegistának tanulnia kell az ALFONSÓ-programban szereplő nyelvek egyikét: ezek az angol, a latin, a francia, az olasz, a német, a spanyol és az ógörög. A nyelveket lehetőséged van több szinten (B2, C1) tanulni, mindenki a tudásának megfelelő csoportban tudja megkezdeni az előrehaladást.</p>
+
+<p>Választhatsz, hogy új nyelvből teszel B2-es nyelvvizsgát 3 év alatt, vagy egy meglévő B2-es vizsgát emelsz C1-esre két év alatt. A nyelvszakos collegisták az ALFONSÓ-program keretében nem tanulhatják és nem fogadtathatják el a szakjuknak megfelelő nyelvet.</p>
+
+<p>Az ALFONSÓ-programon túl minden BTK-s és TáTK-s hallgatónak az első két félévében latint kell tanulnia – ez egy régi collegiumi hagyomány, mely jól jöhet későbbi tanulmányaid során és hasznos, ha később újlatin nyelvet tanulnál. A Filozófia műhely hallgatói választhatnak a latin és az ógörög között.</p>
+
+<p>Részleteket az ALFONSÓ-program <a href = "https://eotvos.elte.hu/media/c2/f9/694cb0adfdacfcf1f4cbf258073b340866456ed7c239c4d250acf71f43b3/ec_alfonso_nyelvi_program.pdf"> szabályzatában</a> olvashatsz.</p>
+
+<h3>11. Ingyen van a nyelvtanulás a Collegiumban?</h3>
+
+<p>Igen! Ráadásul lelkes tanárszakosoktól vagy akár tapasztalt egyetemi tanároktól tanulhatsz.</p>
+
+<h3>12. Mennyire teljesíthetők ezek a követelmények?</h3>
+
+<p>Általában nem nehezebb egy műhely követelményeit teljesíteni, mint egy átlagos egyetemi tárgyat, de ez műhelytől függ. Előfordulnak olyan követelmények is, amelyek csak a felsőévesekre vonatkoznak (ez jellemzően a kutatómunka). De ne feledd, a szakkollégiumban lehetőség van a kerettanterven túlmutató, érdekesebb témák feldolgozására is, és a műhelyórák kiscsoportosak, általában kötetlenebbek, így bármikor kérhetsz segítséget, ha elakadnál!</p>
+
+<h2>Közösség, rendezvények</h2>
+
+<p><em>Részletekért olvasd el a <a href="https://eotvos.elte.hu/kozosseg/diakelet">Diákélet</a>&nbsp;oldalt is.</em></p>
+
+<h3>13. Milyen programok vannak?</h3>
+
+<p>Számos közösségi és szakmai programot szervezünk a collegistáinknak és más szakkollégiumok hallgatóinak is.</p>
+
+<p>GóJaként először a GóJatáborban vehetsz részt, majd az első szemeszteredben mind a GóJaHétvégén, mind pedig a GóJakurzusunkon segítünk beilleszkedni a közösségbe.</p>
+
+<p>Minden évben megszervezzük az Eötvös Collegiumi Éjszakai Sportok (ECÉS) és az Eötvös Convivium eseményeinket, amelyekre a többi szakkollégiumból is érkeznek hallgatók. Ezenkívül többek között szervezünk még Eötvös Majálist, bográcsozásokat, kirándulásokat, nyári tábort, színházlátogatásokat, open-mic felolvasóesteket, táncházakat, de a spontán szerveződő közös főzéseket és társasozásokat sem érdemes kihagyni!</p>
+
+<p>Több műhelyünk szokott szervezni konferenciát, valamint a Választmány szervezésében minden évben megrendezzük az Eötvös konferenciát, amely már többször elnyerte az „ELTE Év Tudományos Rendezvénye” díjat az évek során.</p>
+
+<p>Ezen kívül a középiskolásoknak szóló <a href = "https://tehitabor.eotvos.elte.hu/">Tehetségtáborunk</a> (végzősöknek) és <a href = "https://termtudtabor.eotvos.elte.hu/">Természettudományos Táborunk</a> (ha aktuális neked, olvass utánuk!) szervezésében is sok collegista részt vesz; a szervezők is olyan jól szokták érezni magukat, mint maguk a táborozók.</p>
+
+<h3>14. Félek, hogy nem fogok tudni beilleszkedni, hogy mindenki sokkal műveltebb/okosabb lesz nálam…</h3>
+
+<p>Ha a középiskolában is érdekelt a tudomány, és lelkes vagy a tanulmányaiddal kapcsolatban, akkor emiatt ne izgulj.</p>
+
+<p>A Collegium közössége rendkívül sokszínű, így szinte mindenki megtalálja a közösségen belül a helyét. A collegisták gyakran különböző családi és akadémiai háttérrel rendelkeznek, így kis eséllyel fogsz kilógni. A nagy közösségen belül pedig a műhelyeknek, hobbiköröknek saját közösségei is vannak.</p>
+
+<p>Miután megkérdeztük az elsőéves góJáinkat, hogy mitől féltek leginkább, mielőtt a Collegiumba kerültek, többen is írtak ehhez kapcsolódó választ:</p>
+
+<ul>
+	<li>„Nem tudtam, hogy elég művelt vagyok-e, elég jártas-e a szakterületen, érteni fogom-e a dolgokat, amikkel a műhelyórákon foglalkozunk, hasznomra válik-e majd (tanárszakosként), de már elmúlt ez a félelmem.”</li>
+	<li>„A teljesítménykényszertől, ami szerencsére kicsit sem nyomasztó eddig, illetve attól, hogy mennyire leszek vagy nem leszek képes együtt élni más emberekkel. Azt hiszem, egész jól sikerült beilleszkedni, hála a nyitott emberkéknek.”</li>
+	<li>„Nagyon féltem, hogy itt mindenki okosabb lesz nálam, és keményen kell tanulnom majd, hogy be tudjak illeszkedni. Szerencsére nagyon sokféle emberrel találkoztam itt, és nem hiszem, hogy lenne bárki, aki ne tudná megtalálni a helyét a közösségben. A tanulásban pedig kölcsönösen motiváljuk egymást!”</li>
+</ul>
+
+<h2>Bentlakás</h2>
+
+<p><em>Részletekért olvasd el a <a href="https://eotvos.elte.hu/collegiumrol/felszereltseg-mindennapok">Mindennapok</a>&nbsp;oldalt is.</em></p>
+
+<h3>15.&nbsp;Hogy néz ki egy szoba?</h3>
+
+<p>Szobáink 3 fősek, melyben mindenkinek van egy ágya, egy asztala, egy fali polca, valamint vannak polcos szekrények és zárt ruhásszekrények is a szobákban. Szobánként van egy-egy hűtő.</p>
+
+<h3>16. Lehetünk egy szobában egy barátommal?</h3>
+
+<p>A szobabeosztást a Hallgatói Választmány alakítja ki, célunk az, hogy mindenki elégedett legyen a szobatársaival, úgyhogy meg fogunk próbálni titeket egy szobába tenni. Ha nem ismersz senkit, góJaként a GóJaTáborban van a legtöbb esélyed, hogy barátokat és egyben szobatársakat szerezz. A szobabeosztás csak szeptember elején lesz végleges.</p>
+
+<h3>17. Mi van, ha nem érzem jól magam a szobában?</h3>
+
+<p>Később is van lehetőséged másik szobába költözni, minden félév elején vannak ki- és beköltözések, ezeket ki tudod használni, ha jelzed a Választmány felé. De ilyen nem gyakran fordul elő, az Collegisták általában rugalmasak és alkalmazkodóak.</p>
+
+<h3>18. Hogy megy a tisztálkodás, mosogatás, ruhamosás...?</h3>
+
+<p>Minden emeleten és minden szárnyon van egy-egy közös használatú mosdó, zuhanyzó, és a 2. emeleten egy-egy konyha sütővel, főzőlappal, mosogatóval, teafőzővel, mikróval és szekrényekkel. Minden mást (pl. evőeszköz, fazék, stb.) magadnak kell biztosítanod.</p>
+
+<p>A −2. szinten használhatod a mosógépeket, melyek 200 Ft-os érmével és saját mosószerrel működnek.</p>
+
+<h3>19. Hogy lehet zárni a szobákat?</h3>
+
+<p>A portán minden szobához tartozik 4 kulcs, melyből 1-1 lehet minden lakónál, egy pedig kötelezően a portán marad pótkulcsként. Ha nincs összesen 4 kulcs egy szobához, a gondnokság ingyenesen tud másoltatni.</p>
+
+<h3>20. Vihetek be a szobába elektromos eszközöket?</h3>
+
+<p>Igen, nagyobb elektromos eszközöket egy nyilatkozat kitöltésével hozhatsz be. A kézi eszközöket (hajszárító, telefon) szabadon behozhatod.</p>
+
+<h3>21. Fogadhatok vendéget?</h3>
+
+<p>Igen, ha beírod a portán a vendégfüzetbe. Ha itt is szeretne aludni, akkor esti díjat, kb. ezer forintot kell fizetni éjszakánként. Matracot és pumpát előzetes kérésre biztosít a Választmány.</p>
+
+<h3>22. Van villanyoltás? Az éjszaka közepén hazajöhetek?</h3>
+
+<p>Sem a fennmaradást, sem a kijárást nem tiltja semmi. Este 11 és reggel 7 között nem szabad hangoskodni, illetve az udvar zárvatart, viszont a portaszolgálat 0-24 elérhető.</p>
+
+<h3>23. Hol tudok vásárolni?</h3>
+
+<p>Az Allee bevásárlóközpont 5 percre található a Collegiumtól, ahol egy nagy InterSpar is van. Ezen kívül a Móricz Zsigmond körtéren van egy Lidl, egy sarki Spar és egy GRoby üzlet is. Az Allee mellett pedig találsz egy nagyobb vásárcsarnokot.</p>
+
+<h3>24. Hol van a közelben menza, étkezde, gyorsétterem stb.?</h3>
+
+<p>A Móricz kifogyhatatlan ilyen szempontból. Van a közelben McDonald’s, KFC, több pizzéria, sok gyrosozó (melyből mindenkinek van kedvence), több kínai gyorsétterem és rengeteg más étterem. Az Allee-ban és a vásárcsarnokban is több étkezde található.</p>
+
+<p>A körtér egyébként közlekedési csomópont, így az éjszakai járatok is érintik.</p>
+
+<h3>25.&nbsp;Internet, nyomtató van a Collegiumban?</h3>
+
+<p>A Collegium biztosít wifit minden helyiségben, és a szobákban Ethernet-csatlakozók is vannak. Van fekete-fehér és színes nyomtató és egy szkenner is a lakószinteken; ezeket bárki szabadon használhatja (a nyomtatásért kell fizetni, de jóval kevesebbet, mint amennyit máshol fizetnél).</p>
+
+<h2>Még volna kérdésem...</h2>
+
+<p>Kérdezz nyugodtan bármit, szívesen segítünk!</p>
+
+<p>Választmány: <a href="mailto:ejc.valasztmany@gmail.com">ejc.valasztmany@gmail.com</a>; Választmányi elnök: <a href="mailto:elnok@eotvos.elte.hu">elnok@eotvos.elte.hu</a></p>
+
+<p>Titkárság: <a href="mailto:titkarsag@eotvos.elte.hu">titkarsag@eotvos.elte.hu</a>, +36-1-460-4481</p>
+Közösségi média oldalaink: <a href="https://linktr.ee/eotvoscoli">@eotvoscoli</a>
