@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshop Chooser</title>
+    <title></title>
     <!-- <link rel="stylesheet" href="style.css"> -->
-
     <!-- Internal CSS -->
 <style>
-        body {
+body {
     background-image: 
-        linear-gradient(to bottom, rgba(0,0,0, 0.5), rgba(0,0,0,0.5)), 
+        linear-gradient(to bottom, rgba(0,0,0, 0.7), rgba(0,0,0,0.7)), 
         url('https://eotvos.elte.hu/media/fc/11/257544e519a2664bfd490790e70cb5bb85ad16d25e105ad43472660f9b15/ec-coli-thumb.jpg');
     background-repeat:no-repeat;
     background-size: cover;
-    height: 500px;
+    height: 800px;
+}
+.site-wrapper {
+    height: 600px;
 }
 * {
-    /* outline: 1px dotted red; */
+    outline: 1px dotted red;
     color:aliceblue;
 }
 .flex-container {
@@ -37,28 +39,31 @@
     font-size: 25px;
     font-weight: 600;
     justify-content: left;
-    width: 800px;
+    flex: 0.5 1 800px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .body-header{
-    font-size: 1.5em;
-    font-weight: 600;
+    font-size: 1.5em !important;
+    font-weight: 600 !important;
     justify-content: left;
-    margin: 0.3em 0;
+    margin: 0.3em 0 !important;
 }
 
 p {
     margin: 0.3em 0;
+    color:white !important;
+    font-size: 0.8em !important;
+    text-align: justify;
 }
 
-button {
+.button {
     all: unset;
     font-family: 'Open Sans', monospace;
-    font-size: 16px;
+    font-size: 1em;
     color:aliceblue;
-    min-width: 80px;
+    flex: 0 1 80px;
     max-height: 30px;
     margin: 10px;
     text-align: center;
@@ -67,27 +72,25 @@ button {
     cursor: pointer;
     user-select: none;
     font-weight: bold;
-    padding: 0 0.5em 0 0.5em;
-	font-size: 0.9em;
-	min-width: 5em;		
-    height: 2em;
+    padding: 0 0.2em 0 0.2em;
 	line-height: 2em;
 } 
 
 .btk-tab, .ttk-tab, .gtk-tab, .tatk-tab, .ik-tab{
     flex-direction:column;
 }
-
-.top-bar button {
-    font-size: 20px;
+.top-bar {
+    font-size: 1.1em;
 }
 
 .top-border {
     color:inherit;
     border-bottom:1px solid;
     border-color:inherit;
-    width: 50px;
+    flex: 0 0 50px;
+    max-width: 50px;
     align-self: center;
+    justify-self: center;
 }
 #dropdown .border {
     width: 70px;
@@ -95,16 +98,22 @@ button {
 .top-bar {
     letter-spacing: 1px;
 }
-.active, button:hover {
-    color:gold;
+.button:hover {
+    color:gold !important;
     font-weight: 800;
     transition-duration: 1s;
-    border-color:gold;
+    border-color:gold !important;
+}
+.gold {
+    color:gold !important;
+    font-weight: 800;
+    transition-duration: 1s;
+    border-color:gold !important;
 }
 .lower-border{
-    color:inherit;
+    color:inherit !important;
     border-left: 1px solid white;
-    border-color:inherit;
+    border-color:inherit !important;
     width: 50px;
     align-self: left;
     text-align: left;
@@ -114,16 +123,16 @@ button {
 .top-bar,
 .tab {
     align-content: space-between;
-    flex: 0 1 800px;
-    margin:10px;
+    flex: 0.5 1 800px;
+    margin:0.1em;
 }
 .inner-buttons {
-    flex: 0 1 300px;
+    flex: 0 1 250px;
     font-size: 16px;
     width: 20px;
     min-width: 30px;
     min-height: 20px;
-    margin: 0.2em;
+    margin: 0.1em;
     border-radius: 2px;
     border: 0;
     padding: 0 0.5em 0 0.5em;
@@ -133,7 +142,7 @@ button {
 }
 
 .inner-text {
-    flex: 1 1 400px;
+    flex: 1 2 350px;
     align-content: space-around;
 }
 
@@ -141,6 +150,36 @@ button {
     text-align: right;
 }
 
+/* Mobile responsiveness */
+
+@media only screen and (max-width: 600px) {
+    .responsive-column {
+        flex-direction: column;
+    }
+    .inner-text
+    {
+        flex: 1 1 150px;
+        width: 85vw;
+    }
+    .inner-buttons {
+        flex: 1 1 150px;
+        width: 85vw;
+        justify-content: space-between;
+        align-content:center;
+        padding-top:10px;
+    }
+    .lower-border {
+        width: 25vw;
+    }
+    .button {
+        margin: 0.1em;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .inner-buttons {
+        font-size: 0.8em;
+    }
+}
 
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -150,6 +189,9 @@ button {
   src: url('./fonts/open-sans-v43-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 </style>
+
+
+
 
 <!-- Internal JS -->
     <!-- <script src = "script.js"></script> -->
@@ -162,28 +204,31 @@ function openTab(tabID, closeGroup) {
   }
   var y = document.getElementsByClassName(closeGroup + "-button");
   for (i = 0; i < y.length; i++) {
-    y[i].classList.remove("active");
+    y[i].classList.remove("gold");
   }
   document.getElementById(tabID).style.display = "flex";
-  document.getElementById(tabID + "-button").classList.add("active");
+  document.getElementById(tabID + "-button").classList.add("gold");
+
+  console.log(document.getElementById(tabID + "-button").classList);
 
   if (tabID = "tatk") {
     document.getElementById("tarstud").style.display = "flex";
-    document.getElementById("tarstud-button").classList.add("active");
+    document.getElementById("tarstud-button").classList.add("gold");
   }
   if (tabID = "ik") {
     document.getElementById("info").style.display = "flex";
-    document.getElementById("info-button").classList.add("active");
+    document.getElementById("info-button").classList.add("gold");
   }
   if (tabID = "gtk") {
     document.getElementById("gazdtud").style.display = "flex";
-    document.getElementById("gazdtud-button").classList.add("active");
+    document.getElementById("gazdtud-button").classList.add("gold");
   }
 }
 </script>
 </head>
 <body>
 
+<div class = "site-wrapper">
 <!-- Small header -->
 <div class = "flex-container">
     <div class = "header">Találd meg a neked való műhelyünket!</div>
@@ -194,16 +239,16 @@ function openTab(tabID, closeGroup) {
 
 <div class = "flex-container">
     <div class="top-bar flex-container">
-        <button class = "tab-button flex-item flex-container" id = "btk-button" onclick="openTab('btk', 'tab')">
-        <div class = "top-border">BTK</div></button>
-        <button class = "tab-button flex-item flex-container" id = "ttk-button" onclick="openTab('ttk', 'tab')">
-        <div class = "top-border">TTK</div></button>
-        <button class = "tab-button flex-item flex-container" id = "tatk-button" onclick="openTab('tatk', 'tab')">
-        <div class = "top-border">TáTK</div></button>
-        <button class = "tab-button flex-item flex-container" id = "ik-button" onclick="openTab('ik', 'tab')">
-        <div class = "top-border">IK</div></button>
-        <button class = "tab-button flex-item flex-container" id = "gtk-button" onclick="openTab('gtk', 'tab')">
-        <div class = "top-border">GTK</div></button>
+        <div class = "button tab-button flex-item flex-container" id = "btk-button" onclick="openTab('btk', 'tab')">
+            <div class = "top-border flex-item">BTK</div></div>
+        <div class = "button tab-button flex-item flex-container" id = "ttk-button" onclick="openTab('ttk', 'tab')">
+            <div class = "top-border flex-item">TTK</div></div>
+        <div class = "button tab-button flex-item flex-container" id = "tatk-button" onclick="openTab('tatk', 'tab')">
+            <div class = "top-border flex-item">TáTK</div></div>
+        <div class = "button tab-button flex-item flex-container" id = "ik-button" onclick="openTab('ik', 'tab')">
+            <div class = "top-border flex-item">IK</div></div>
+        <div class = "button tab-button flex-item flex-container" id = "gtk-button" onclick="openTab('gtk', 'tab')">
+            <div class = "top-border flex-item">GTK</div></div>
     </div>
 </div>
 
@@ -212,121 +257,135 @@ function openTab(tabID, closeGroup) {
 <div class = "flex-container" id = "dropdown">
 
     <!-- BTK -->
-    <div id = "btk" class = "tab flex-container" id = "btk-button-wrapper" style = "display:none">
+    <div id = "btk" class = "tab flex-container responsive-column" id = "btk-button-wrapper" style = "display:none">
         <div class = "inner-buttons flex-container column">
-            <button class = "btk-tab-button flex-item flex-container" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
-            <div class = "lower-border">Angol</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
-            <div class = "lower-border">Klasszfil</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "filozofia-button" onclick="openTab('filozofia', 'btk-tab')">
-            <div class = "lower-border">Filozófia</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "francia-button" onclick="openTab('francia', 'btk-tab')">
-            <div class = "lower-border">Francia</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "german-button" onclick="openTab('german', 'btk-tab')">
-            <div class = "lower-border">Germán</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "magyar-button" onclick="openTab('magyar', 'btk-tab')">
-            <div class = "lower-border">Magyar</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "olasz-button" onclick="openTab('olasz', 'btk-tab')">
-            <div class = "lower-border">Olasz</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "orient-button" onclick="openTab('orient', 'btk-tab')">
-            <div class = "lower-border">Orientalisztika</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "skandi-button" onclick="openTab('skandi', 'btk-tab')">
-            <div class = "lower-border">Skandinavisztika</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "spanyol-button" onclick="openTab('spanyol', 'btk-tab')">
-            <div class = "lower-border">Spanyol</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "szlav-button" onclick="openTab('szlav', 'btk-tab')">
-            <div class = "lower-border">Szlavisztika</div></button>
-            <button class = "btk-tab-button flex-item flex-container" id = "tort-button" onclick="openTab('tort', 'btk-tab')">
-            <div class = "lower-border">Történelem</div></button>
+            <div class = "button btk-tab-button flex-item flex-container" id = "angol-button" onclick="openTab('angol', 'btk-tab')">
+                <div class = "lower-border">Angol</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "klasszfil-button" onclick="openTab('klasszfil', 'btk-tab')">
+                <div class = "lower-border">Klasszfil</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "filozofia-button" onclick="openTab('filozofia', 'btk-tab')">
+                <div class = "lower-border">Filozófia</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "francia-button" onclick="openTab('francia', 'btk-tab')">
+                <div class = "lower-border">Francia</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "german-button" onclick="openTab('german', 'btk-tab')">
+                <div class = "lower-border">Germán</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "magyar-button" onclick="openTab('magyar', 'btk-tab')">
+                <div class = "lower-border">Magyar</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "olasz-button" onclick="openTab('olasz', 'btk-tab')">
+                <div class = "lower-border">Olasz</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "orient-button" onclick="openTab('orient', 'btk-tab')">
+                <div class = "lower-border">Orientalisztika</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "skandi-button" onclick="openTab('skandi', 'btk-tab')">
+                <div class = "lower-border">Skandinavisztika</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "spanyol-button" onclick="openTab('spanyol', 'btk-tab')">
+                <div class = "lower-border">Spanyol</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "szlav-button" onclick="openTab('szlav', 'btk-tab')">
+                <div class = "lower-border">Szlavisztika</div></div>
+            <div class = "button btk-tab-button flex-item flex-container" id = "tort-button" onclick="openTab('tort', 'btk-tab')">
+                <div class = "lower-border">Történelem</div></div>
         </div>
 
         <div class = "inner-text">
             <div id = "angol" class = "btk-tab" style="display:none">
-                <p class="body-header">Angol-Amerikai Műhely</p>
-                <p>Az Angol-Amerikai Műhely szeretettel várja azon első, másod-és harmadéves anglisztika BA, MA és osztatlan tanárszakos hallgatókat, akik bővíteni szeretnék tudásukat az angol irodalom, kultúra, módszertan vagy nyelvészet területén. A kutatási tevékenységet támogatva évente kerül megrendezésre Black Friday Conference nevű hallgatói konferenciánk, amelynek keretében a műhelytagok prezentálhatják egymásnak eredményeiket. A Műhely emellett egy nagyon összetartó közösség is; szervezni szoktunk közös túrákat, kirándulásokat és karácsonyozásokat is, amik mindig nagyon jó hangulatban telnek.</p>
+                <p class="body-header">Angol-Amerikai műhely</p>
+                <p>Az Angol-Amerikai Műhely szeretettel várja azon anglisztika BA, MA és osztatlan tanárszakos hallgatókat, akik bővíteni szeretnék tudásukat az angol irodalom, kultúra, módszertan vagy nyelvészet területén. A kutatási tevékenységet támogatva évente kerül megrendezésre Black Friday Conference nevű hallgatói konferenciánk, amelynek keretében a műhelytagok prezentálhatják egymásnak eredményeiket. </p>
                 <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/angol-amerikai-muhely">Tudj meg többet</a>
             </div>
             <div id = "klasszfil" class = "btk-tab" style="display:none">
                 <p class="body-header">Bollók János Klasszika-filológia műhely</p>
-                <p>A klasszika-filológiai képzés nem csak egyidős a Collegium alapításával, de hűen tükrözi az intézmény történetét is: a Collegium aktuális helyzete a hagyományos értékek képviselete szerint erősödött, illetve gyengült. A szétveretést, majd az 1960-as években kezdődött újjászerveződést követően, Szijártó István igazgató irányítása alatt az 1980-as évek közepétől teremtődtek meg újra a komoly szakmai munka feltételei. A régóta működő nyelvi képzés keretei között Bollók János tanította a latint, valamint felügyelte a latin szakos collegistákat, 1988-1989-ben pedig a hallgatóság kezdeményezésére az ő vezetése mellett az elsők között alakult ki a Collegiumban az a szervezeti forma — műhely –, amely az egyetemi képzést kiegészítve önálló collegiumi órákat is szervezett. A műhely önálló könyvtárral rendelkezik, amelynek anyagát részben a pályázati támogatásból vásárolt kötetek, részben adományok, részben névadója, Bollók János professzor hagyatéka alkotja, 2009 őszén pedig a könyvállomány tovább bővült: megnyitottuk a Borzsák István professzorról elnevezett hagyatéki könyvtárat az épületben.</p>
+                <p>A klasszika-filológiai képzés egyidős a Collegium alapításával, névadója, Bollók János tanította a latint, valamint felügyelte a latin szakos collegistákat, 1988-1989-ben pedig a hallgatóság kezdeményezésére az ő vezetése mellett az elsők között alakult ki a Collegiumban a műhely, mint szervezeti forma. A műhely önálló könyvtárral rendelkezik, ami 2009 őszén tovább bővült a Borzsák István professzorról elnevezett hagyatéki könyvtárral.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/bollok-janos-klasszika-filologia-muhely">Tudj meg többet</a>
             </div>
             <div id = "filozofia" class = "btk-tab" style="display:none">
-                <p class="body-header">Filozófia Műhely</p>
+                <p class="body-header">Filozófia műhely</p>
                 <p>A Filozófia műhely 1995-ben indult Borbély Gábor vezetésével. Több év átmeneti időszak után 2002-ben alakult újra, és tizenöt éven keresztül Faragó Szabó István volt a műhelyvezető. A műhely tagjai elsősorban a Collegium filozófia szakos hallgatói, mellettük azonban nyitottak vagyunk az összes jelenlegi és korábbi bölcsész, társadalomtudományi és TTK-s hallgató felé is. Fő célunk az egyetemi filozófiai képzést kiegészítő, különböző specializációk irányába mutató műhelymunka végzése. Emellett a Collegium más műhelyeinek hallgatói számára is lehetővé tesszük a filozófiai tematikájú órák látogatását. További fontos célkitűzésünk előadó- és vitaestek szervezése a Collegium keretein belül; publikációk, tanulmánykötetek közzététele.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/filozofia-muhely">Tudj meg többet</a>
             </div>
             <div id = "francia" class = "btk-tab" style="display:none">
                 <p class="body-header">Aurélien Sauvageot francia műhely</p>
                 <p>Az Eötvös József Collegium kivételes helyet foglal el, hiszen más – a 19. sz. végén zömmel német mintára kialakított – intézményekkel szemben a párizsi École Normale Supérieure képzési modelljét irányadónak tekintve a francia és franciás kultúra otthonává vált. Így aztán egészen a ’20-as évek végéig a magyar-francia szak volt a par excellence Eötvös-kollégista szak, jóllehet azok az értékek, melyeket a franciás irányultság jelentett és jelent a Collegium számára – a munka, a művészi lendület, a tiszta logika szeretete és a kritikai gondolkodás szabadsága melletti elköteleződés – az intézmény minden tagja számára szakterületétől függetlenül meghatározó.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/francia-muhely">Tudj meg többet</a>
             </div>
             <div id = "german" class = "btk-tab" style="display:none">
-                <p class="body-header">Germanisztika Műhely</p>
+                <p class="body-header">Germanisztika műhely</p>
                 <p>A Germanisztika műhely a műhelyvezető, valamint főleg a Germanisztikai Intézet és a Károli Gáspár Református Egyetem Német Nyelv és Irodalom Tanszéke oktatóinak közreműködésével félévente 3–6 irodalomtudományi, nyelvtudományi, műfordítói és egyéb szakmai kurzust indít, de lehetőségeink szerint egyéb hazai és külföldi előadókat is meghívunk. Műhelyünk elsődleges célja, hogy kis létszámú (optimális esetben 5–6, legfeljebb 8–10 fős) csoportokban tanulva nyelvi, országismereti, irodalom- és nyelvtudományi ismereteket adjon hallgatóinknak.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/germanisztika-muhely">Tudj meg többet</a>
             </div>
             <div id = "magyar" class = "btk-tab" style="display:none">
-                <p class="body-header">Magyar Műhely</p>
+                <p class="body-header">Magyar műhely</p>
                 <p>Az Eötvös Collegium Magyar műhelye a Collegium egyik legnagyobb tradícióval rendelkező szakmai műhelye. Elsődleges feladata, hogy felkarolja azokat a tehetséges, magyar nyelv és irodalom diszciplínáihoz tartozó – illetve az irodalom- és kultúratudományos, valamint nyelvtudományos kutatás iránt érdeklődő – BA, MA vagy osztatlan tanári képzésben részt vevő hallgatókat, akik aktív részeseivé szeretnének válni az ELTE tudományos életének.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/magyar-muhely">Tudj meg többet</a>
             </div>
             <div id = "olasz" class = "btk-tab" style="display:none">
-                <p class="body-header">Olasz Műhely</p>
+                <p class="body-header">Olasz műhely</p>
                 <p>A magyar-olasz kapcsolatok, köztük az Eötvös Collegium és a pisai Scuola Normale együttműködése igen gazdag múltra tekintenek vissza. A 2009-ben megtalapított Olasz műhely célja az italianisztika és az olasz filológia iránti érdeklődés erősítése. Segíti azokat a hallgatókat, akik elmélyülten kívánnak foglalkozni Itália történetével, irodalmával, nyelveivel, valamint a művészettörténettel. A legfőbb cél, hogy a legkiválóbb tanárok együttműködésével a műhely olyan oktatási-kutatási központtá váljék Magyarországon, ahol a legtehetségesebb hallgatók kiemelkedő szakmai színvonalú képzésben részesülnek, kutatási lehetőségekhez jutnak, és ahol a doktoranduszok és a fiatal kutatók is csatlakozhatnak a munkához. Fontos szempont továbbá, hogy a tehetséges magyar diák ne kerüljön hátrányba az élvonalban tanuló olasz és más országbeli fiatal kutatókkal szemben: a műhely törekszik arra, hogy határozottan és lényegre törően egészítse ki az egyetemi képzést.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/olasz-muhely">Tudj meg többet</a>
             </div>
             <div id = "orient" class = "btk-tab" style="display:none">
-                <p class="body-header">Vekerdi József Orientalisztika Műhely</p>
+                <p class="body-header">Vekerdi József Orientalisztika műhely</p>
                 <p>Történelmi „keleti kapcsolatai”, illetve a keleti kultúrák iránt egyre növekvő hazai érdeklődés nyomán a Collegium 2009-ben megalapította az Orientalisztika Műhelyt. A keleti nyelvek erősödő népszerűsége napjainkban nem magyar sajátosság: a politikai és gazdasági erővonalak átrendeződése az elmúlt évtizedekben egyre több fiatal figyelmét fordította az arab világ és a közép-keleti térség, Belső-Ázsia, illetve Kelet-Ázsia felé. A műhely legfőbb célja, hogy olyan oktatási-kutatási központtá fejlődjön, ahol a keleti kultúrákhoz kötődő szakok legtehetségesebb hallgatói kiemelkedő szakmai színvonalú képzésben részesülhetnek, illetve kutatási lehetőségekhez juthatnak.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/orientalisztika-muhely">Tudj meg többet</a>
             </div>
             <div id = "skandi" class = "btk-tab" style="display:none">
-                <p class="body-header">Skandinavisztika Műhely</p>
+                <p class="body-header">Skandinavisztika műhely</p>
                 <p>Az Eötvös Collegiumban 2006 óta működik a Skandinavisztika műhely. A tagok szinte mindig is az ELTE skandinavisztika szakos BA, MA és PhD hallgatói voltak, de a műhelyben olykor megfordultak egyéb társtudományok művelői is. Az alapítás óta eltelt tizenkét év során kerekasztal-beszélgetéseket, irodalomtörténeti konferenciát, szabadegyetemi előadásokat szerveztünk, többször együttműködtünk a Skandináv Ház alapítvánnyal, a skandináv országok magyarországi képviseleteivel. A kurzuskínálat általában egy-egy nagyobb projektre épül. 2014 és 2016 között műfordítói szemináriumokat tartottunk. 2018-ban elkészült első tanulmánykötetünk Seksten/sexton år(„Tizenhat év”) címmel</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/skandinavisztika-muhely">Tudj meg többet</a>
             </div>
             <div id = "spanyol" class = "btk-tab" style="display:none">
-                <p class="body-header">Spanyol Műhely</p>
+                <p class="body-header">Spanyol műhely</p>
                 <p>A 2009-ben megalapított Spanyol műhely az Eötvös Collegium spanyol szakos diákjainak képzését egészíti ki. Tagjai számára olyan – az egyetemi órák közé illeszkedő, illetve azokon felüli – szemináriumokon és rendezvényeken biztosítja a részvételt, amelyek célja a diákok érdeklődésének felkeltése, nyelvi és tárgyi ismereteik elmélyítése, végül, de nem utolsósorban, az önálló kutatómunkára való nevelés, valamint a publikálásra való felkészítés. A műhely másik meghatározó mozzanata az interdiszciplinaritás: az irodalmi párhuzamok vizsgálata mellett a tematika része a modern és a kortárs spanyol művészeti háttér, illetve a különböző művészeti ágakban (zene, fotográfia, festészet, stb.) megnyilvánuló párhuzamok, jelenlétek is.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/spanyol-muhely">Tudj meg többet</a>
             </div>
             <div id = "szlav" class = "btk-tab" style="display:none">
-                <p class="body-header">Szlavisztika Műhely</p>
+                <p class="body-header">Szlavisztika műhely</p>
                 <p>Az ELTE Eötvös József Collegiumának Szlavisztika Műhelye gazdag hagyományokkal és nagy múlttal rendelkező tudományos és oktatási műhely. Legfontosabb célja az egyetemi szlavisztikai nyelvi és irodalmi oktatás BA, MA, és minor képzési formájától részben független, részben ahhoz kapcsolódó kiegészítése, illetve egy-egy speciális területének elmélyítése. Rendszeresen sor kerül az ELTE BTK Orosz nyelvi és Irodalmi Tanszékével közös hazai és nemzetközi rendezvényekre, melyeken világszerte ismert kutatók is vendégeink (pl. N. Žekulin, B. Kaibach, U. Heftrich, P. Torop). Éves műhelykonferenciánkon a műhely tagjai mellett az ország más egyetemeiről is fogadjuk a szlavisztikával elmélyülten foglalkozó hallgatók bemutatkozását. A konferencia előadásaiból műhelykötetet szerkesztünk. Kutatószemináriumunk keretein belül a műhelytagok tudományos munkák elkészítéséhez kapnak segítséget. A Szlavisztika Műhely további céljának tekinti, hogy különböző műhelyprogjamjain minél több érdeklődőhöz hozza közelebb a szláv kultúrát.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/szlavisztika-muhely">Tudj meg többet</a>
             </div>
             <div id = "tort" class = "btk-tab" style="display:none">
-                <p class="body-header">Történész Műhely</p>
+                <p class="body-header">Történész műhely</p>
                 <p>1984-ben alapított műhelyünk a történelemtudomány és az ahhoz kapcsolódó tudományszakok — úgymint a művészettörténet, a régészettudomány, a néprajztudomány, a levéltártudomány és a történeti muzeológia — területén végez oktatói és kutatómunkát. Kurzusaink és szakmai programjaink szervesen kiegészítik a műhelytagok egyetemi curriculumát: műhelyszemináriumainkon és a havi rendszerességgel tartott műhelyelőadásokon az ELTE oktatói és meghívott külső előadók segítségével igyekszünk tovább mélyíteni tagjainknak a rendes egyetemi tanulmányaik során elsajátított ismereteit. Támogatjuk és ösztönözzük tagjaink önálló kutatásait és tudományos diákköri munkáját, publikációs lehetőséget biztosítunk számukra a collegiumi konferenciákon, illetve kiadványokban. Szívesen látjuk tagjaink sorában az ELTE valamennyi történelem, művészettörténet, régészet, néprajz, levéltár vagy történeti muzeológia szakos hallgatóját, aki kedvet és elhivatottságot érez ahhoz, hogy szakkollégiumi keretek között, valódi műhelymunkában is részt vállalva, de önálló kutatásokat is végezve készüljön fel tanári vagy kutatói pályájára.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tortenesz-muhely">Tudj meg többet</a>
             </div>
         </div>
     </div>
 
 
     <!-- TTK -->
-    <div id = "ttk" class = "tab" style="display:none">
+    <div id = "ttk" class = "tab flex-container responsive-column" style="display:none">
         <div class = "inner-buttons flex-container column">
-            <button class = "ttk-tab-button flex-item flex-container" id = "bikem-button" onclick="openTab('bikem', 'ttk-tab')">
-            <div class = "lower-border">Bikém</div></button>
-            <button class = "ttk-tab-button flex-item flex-container" id = "matfiz-button" onclick="openTab('matfiz', 'ttk-tab')">
-            <div class = "lower-border">Matfiz</div></button>
-            <button class = "ttk-tab-button flex-item flex-container" id = "mendol-button" onclick="openTab('mendol', 'ttk-tab')">
-            <div class = "lower-border">Mendöl</div></button>
+            <div class = "button ttk-tab-button flex-item flex-container" id = "bikem-button" onclick="openTab('bikem', 'ttk-tab')">
+                <div class = "lower-border">Bikém</div></div>
+            <div class = "button ttk-tab-button flex-item flex-container" id = "matfiz-button" onclick="openTab('matfiz', 'ttk-tab')">
+                <div class = "lower-border">Matfiz</div></div>
+            <div class = "button ttk-tab-button flex-item flex-container" id = "mendol-button" onclick="openTab('mendol', 'ttk-tab')">
+                <div class = "lower-border">Mendöl</div></div>
         </div>
 
         <div class = "inner-text">
             <div id = "bikem" class = "ttk-tab" style="display:none">
-                <p class="body-header">Biológia-Kémia Műhely</p>
-                <p></p>
+                <p class="body-header">Biológia-Kémia műhely</p>
+                <p>A biológia és a kémia napjaink leggyorsabban fejlődő tudományterületei közé tartoznak, ezért nagy hangsúlyt fordítanak arra, hogy a Collegiumba felvételt nyert tehetséges hallgatók megismerkedjenek a két terület aktuális kérdéseivel és legújabb vívmányaival. A műhelytagok nagy része már az egyetem évei alatt bekapcsolódik valamilyen kutatásba az ELTE TTK Biológiai vagy Kémiai Intézetének valamelyik tanszékén, az SE, illetve az ELKH TTK vagy KOKI valamelyik kutatócsoportjában. 2012 óta minden nyáron a Műhely szerves része az Eötvös Természettudományos Tábor szervezői csapatának. </p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/biologia-kemia-muhely">Tudj meg többet</a>
             </div>
             <div id = "matfiz" class = "ttk-tab" style="display:none">
-                <p class="body-header">Matematika-Fizika Műhely</p>
+                <p class="body-header">Matematika-Fizika műhely</p>
                 <p></p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/matematika-fizika-muhely">Tudj meg többet</a>
             </div>
             <div id = "mendol" class = "ttk-tab" style="display:none">
                 <p class="body-header">Mendöl Tibor Földrajz–Földtudomány– Környezettudomány műhely</p>
-                <p></p>
+                <p>A műhely mindazon földrajz, földtudományi, illetve környezettudományi szakokon, szakpárokban tanuló hallgatók jelentkezését várja, akik az egyetemi óráikon felül szeretnének új szemléletekkel, többlet tudással gazdagodni. A műhelyórák, illetve a különböző terepgyakorlatok remek fejlődési lehetőséget nyújtanak a tanulni vágyók számára, és a szakmai életen felül a műhely lényeges része a nagyszerű közösségi élet is: szabadidős tevékenységként kirándulások, túrák, egyéb programok kerülnek megrendezésre. A műhely rendelkezik egy nagy méretű könyvtárral is, ahol akár 100 éves könyvekből is lehet tanulni.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/mendol-tibor-foldrajz-foldtudomany-kornyezettudomany-muhely">Tudj meg többet</a>
             </div>
         </div>
     </div>
 
 
     <!-- IK -->
-    <div id = "ik" class = "tab" style="display:none">
+    <div id = "ik" class = "tab flex-container responsive-column" style="display:none">
         <div class = "inner-buttons flex-container column">
-            <button class = "ik-tab-button flex-item flex-container" id = "info-button" onclick="openTab('info', 'ik-tab')">
-            <div class = "lower-border">Infó</div></button>
+            <div class = "button ik-tab-button flex-item flex-container" id = "info-button" onclick="openTab('info', 'ik-tab')">
+            <div class = "lower-border">Infó</div></div>
         </div>
 
         <div class = "inner-text">
@@ -338,34 +397,37 @@ function openTab(tabID, closeGroup) {
     </div>
 
     <!-- TáTK -->
-    <div id = "tatk" class = "tab" style="display:none">
+    <div id = "tatk" class = "tab flex-container responsive-column" style="display:none">
         <div class = "inner-buttons flex-container column">
-            <button class = "tatk-tab-button flex-item flex-container" id = "tarstud-button" onclick="openTab('tarstud', 'tatk-tab')">
-            <div class = "lower-border">Társtud</div></button>
+            <div class = "button tatk-tab-button flex-item flex-container" id = "tarstud-button" onclick="openTab('tarstud', 'tatk-tab')">
+            <div class = "lower-border">Társtud</div></div>
         </div>
 
         <div class = "inner-text">
             <div id = "tarstud" class = "tatk-tab" style="display:none">
                 <p class="body-header">Társadalomtudományi műhely</p>
-                <p>Lorem ipsum</p>
+                <p>A Társadalomtudományi műhely a Collegium egyik legfiatalabb és az egyik legszínesebb, sokszor személyre szabott programokat kínáló műhelye. Célja, hogy előremozdítsa az egyetem kiemelkedő tehetségű és szorgalmú hallgatóinak elsősorban tudományos pályáját, de hozzásegíti egyéb karrierlehetőségekhez is. A hallgatók a legkülönfélébb szakterületekről érkeznek, munkánk során pedig igyekszünk mindnyájuk számára kielégítő, későbbi elhelyezkedésük szempontjából hasznos, sőt piacképes képzést nyújtani.</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tarsadalomtudomanyi-muhely">Tudj meg többet</a>
             </div>
         </div>
     </div>
 
     <!-- GTK -->
-    <div id = "gtk" class = "tab" style="display:none">
+    <div id = "gtk" class = "tab flex-container responsive-column" style="display:none">
         <div class = "inner-buttons flex-container column">
-            <button class = "gtk-tab-button flex-item flex-container" id = "gazdtud-button" onclick="openTab('gazdtud', 'gtk-tab')">
-            <div class = "lower-border">Gazdtud</div></button>
+            <div class = "button gtk-tab-button flex-item flex-container" id = "gazdtud-button" onclick="openTab('gazdtud', 'gtk-tab')">
+            <div class = "lower-border">Gazdtud</div></div>
         </div>
 
         <div class = "inner-text">
             <div id = "gazdtud" class = "gtk-tab" style="display:none">
-                <p class="body-header">Gazdaságtudományi Műhely</p>
+                <p class="body-header">Gazdaságtudományi műhely</p>
                 <p>Lorem ipsum ddddddddddddddddddddddddddddddddddddddddddd dddddddddddddddddd ddddddddddddddddddddddddddddddddddddddddd</p>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/gazdtud-muhely">Tudj meg többet</a>
             </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>
