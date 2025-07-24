@@ -1,9 +1,4 @@
-<!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Internal CSS -->
 <style>
 /* Background */
@@ -14,11 +9,11 @@ body {
     background-repeat:no-repeat;
     background-size: cover;
     height: 750px;
+    background-position-x: 35%;
 }
 /* Generic settings */
 * {
     /* outline: 1px dotted red; */
-    color:aliceblue;
     font-family: 'Open Sans', sans-serif;
 }
 .site-wrapper {
@@ -88,10 +83,10 @@ body {
 }
 .button:hover,
 .activeButton { /* equals the .active class, it just creates conflict with the website */
-    color:gold;
+    color:#bc9632;
     font-weight: 800;
     transition-duration: 1s;
-    border-color:gold;
+    border-color:#bc9632;
 }
 .top-bar,
 .tab {
@@ -122,6 +117,7 @@ body {
     font-size: 0.9em !important;
     text-align: justify;
     line-height: 150%;
+    color:aliceblue !important;
 }
 .inner-text .body-header{
     font-size: 1.5em !important;
@@ -129,9 +125,14 @@ body {
     justify-content: left;
     margin: 0.6em 0 0.3em 0 !important;
     text-align: left;
+    color:aliceblue !important;
 }
 .learn{
     text-align: right;
+    color:#bc9632 !important;
+}
+.learn:hover {
+    color: lightskyblue !important;
 }
 /* Mobile responsiveness */
 @media only screen and (max-width: 600px) {
@@ -167,7 +168,7 @@ body {
     .body-header {
         font-size: 1.2em !important;
     }
-    p {
+    .inner-text p {
         font-size: 0.8em !important;
         text-align: left !important;
     }
@@ -292,7 +293,7 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
             <div id = "angol" class = "btk-tab" style="display:none">
                 <p class="body-header">Angol&ndash;Amerikai műhely</p>
                 <p>Az Angol&ndash;Amerikai Műhely szeretettel várja azon anglisztika BA, MA és osztatlan tanárszakos hallgatókat, akik bővíteni szeretnék tudásukat az angol irodalom, kultúra, módszertan vagy nyelvészet területén. A kutatási tevékenységet támogatva évente kerül megrendezésre Black Friday Conference nevű hallgatói konferenciánk, amelynek keretében a műhelytagok prezentálhatják egymásnak eredményeiket. </p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/angol-amerikai-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/angol-amerikai-muhely">Tudj meg többet...</a>
             </div>
             <div id = "klasszfil" class = "btk-tab" style="display:none">
                 <p class="body-header">Bollók János Klasszika&ndash;filológia műhely</p>
@@ -302,52 +303,52 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
             <div id = "filozofia" class = "btk-tab" style="display:none">
                 <p class="body-header">Filozófia műhely</p>
                 <p>A műhely tagjai elsősorban a Collegium filozófia szakos hallgatói, mellettük azonban bármely összes jelenlegi és korábbi bölcsész, társadalomtudományi és TTK-s hallgató jelentkezhet. Fő céljuk az egyetemi filozófiai képzést kiegészítő, különböző specializációk irányába mutató műhelymunka végzése, illetve előadó- és vitaestek szervezése a Collegium keretein belül, és publikációk, tanulmánykötetek közzététele.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/filozofia-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/filozofia-muhely">Tudj meg többet...</a>
             </div>
             <div id = "francia" class = "btk-tab" style="display:none">
                 <p class="body-header">Aurélien Sauvageot francia műhely</p>
                 <p>Az 1990–es évek elejétől működő műhelybe az egyetem olyan növendékeik jelentkezhetnek, akik magas szintű francia nyelvtudással rendelkeznek, egyetemi képzésükben is szerepet kap a nyelv, és elmélyítenék azt irodalmi, nyelvészeti vagy civilizációs témákban. A meghívott hazai és külföldi vendégtanárok tematikus előadássorozatai lehetővé teszik a műhelymunka szerteágazó, irodalmi, történeti és nyelvészeti területeket tükröző működését és a hallgatók felkészültségének szélesebb körben történő megmérettetését is.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/francia-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/francia-muhely">Tudj meg többet...</a>
             </div>
             <div id = "german" class = "btk-tab" style="display:none">
                 <p class="body-header">Germanisztika műhely</p>
                 <p>A műhely várja minden olyan tehetséges, igényes szakmai munkában részt venni kívánó germanista hallgató felvételi pályázatát, kinek egyetemi képzésében szerepel a német nyelv. A műhelyfoglalkozások feladata az egyetemen szerzett ismeretek elmélyítése olyan speciális kurzusokkal, melyek kiegészítik a felsőoktatási tevékenységet – emellett kutatási és publikációs lehetőséget is biztosítanak egy támogató környezetben.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/germanisztika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/germanisztika-muhely">Tudj meg többet...</a>
             </div>
             <div id = "magyar" class = "btk-tab" style="display:none">
                 <p class="body-header">Magyar műhely</p>
                 <p>A műhely a tagok érdeklődésének megfelelően két kabinettel működik: az Irodalmi és Nyelvészeti Kabinettel, melyek feladata, hogy felkarolja azokat a tehetséges, magyar nyelv és irodalom diszciplínáihoz tartozó hallgatókat, akik aktív részeseivé szeretnének válni az egyetem tudományos életének. Az állandó műhelykurzus a Vitakör elnevezést viseli, ahol heti rendszerességgel egy-egy műhelytag aktuális kutatási témája kerül a középpontba vagy problémafelvetések, melyek a műhelytagságot foglalkoztató felvetés köré szerveződnek.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/magyar-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/magyar-muhely">Tudj meg többet...</a>
             </div>
             <div id = "olasz" class = "btk-tab" style="display:none">
                 <p class="body-header">Olasz műhely</p>
                 <p>A 2009-ben megalapított műhely célja az italianisztika és az olasz filológia iránti érdeklődés erősítése olyan alapszakos, tanárszakos, illetve haladó olasz minoros hallgatókban, akik elmélyülten kívánnak foglalkozni Itália történetével és kultúrájával. A legfőbb cél, hogy az Eötvös Collegiumhoz kötődő kiváló magyar és olasz származású tudósok együttműködésével a műhely olyan oktatási-kutatási központtá váljék Magyarországon, ahol a legtehetségesebb hallgatók kiemelkedő szakmai színvonalú képzésben részesülnek.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/olasz-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/olasz-muhely">Tudj meg többet...</a>
             </div>
             <div id = "orient" class = "btk-tab" style="display:none">
                 <p class="body-header">Vekerdi József Orientalisztika műhely</p>
                 <p>Történelmi keleti kapcsolatai, illetve a keleti kultúrák iránt egyre növekvő hazai érdeklődés nyomán a 2009-ben megalapított műhelynek későbbi névadója, Vekerdi József tiszteletbeli elnöke volt. A legfőbb cél egy olyan oktatási-kutatási központtá fejlődni, ahol a keleti kultúrákhoz kötődő szakok legtehetségesebb hallgatói kiemelkedő szakmai színvonalú képzésben részesülhetnek, illetve kutatási lehetőségekhez juthatnak.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/orientalisztika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/orientalisztika-muhely">Tudj meg többet...</a>
             </div>
             <div id = "skandi" class = "btk-tab" style="display:none">
                 <p class="body-header">Skandinavisztika műhely</p>
                 <p>A 2006 óta működő műhelyben a tagok szinte mindig is az egyetem skandinavisztika szakos hallgatói voltak, de olykor megfordultak egyéb társtudományok művelői is. Az alapítás óta eltelt tizenkét év során kerekasztal-beszélgetéseket, irodalomtörténeti konferenciát, szabadegyetemi előadásokat szerveztek, többször együttműködek a Skandináv Ház alapítvánnyal, a skandináv országok magyarországi képviseleteivel, 2016 óta pedig a Kutatók Éjszakájának résztvevői.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/skandinavisztika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/skandinavisztika-muhely">Tudj meg többet...</a>
             </div>
             <div id = "spanyol" class = "btk-tab" style="display:none">
                 <p class="body-header">Spanyol műhely</p>
                 <p>A 2009-ben megalapított műhely tagjai számára olyan kurzusokon biztosítják a részvételt, amelyek célja a diákok érdeklődésének felkeltése és önálló kutatásra való nevelése, valamint a publikálásra való felkészítés. A műhely másik meghatározó mozzanata az interdiszciplinaritás: az irodalmi párhuzamok vizsgálata mellett a tematika része a modern és a kortárs spanyol művészeti háttér, illetve a különböző művészeti ágakban megnyilvánuló párhuzamok, jelenlétek is.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/spanyol-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/spanyol-muhely">Tudj meg többet...</a>
             </div>
             <div id = "szlav" class = "btk-tab" style="display:none">
                 <p class="body-header">Szlavisztika műhely</p>
                 <p>Az Szlavisztika műhely legfontosabb célja az egyetemi szlavisztikai nyelvi képzési formájától részben független, részben ahhoz kapcsolódó kiegészítése. Rendszeresen sor kerül az ELTE BTK Orosz nyelvi és Irodalmi Tanszékével közös hazai és nemzetközi rendezvényekre, melyeken világszerte ismert kutatók is vendégeink, illetve éves műhelykonferenciánkon a műhely tagjai mellett az ország más egyetemeiről is fogadjuk a szlavisztikával elmélyülten foglalkozó hallgatók bemutatkozását.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/szlavisztika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/szlavisztika-muhely">Tudj meg többet...</a>
             </div>
             <div id = "tort" class = "btk-tab" style="display:none">
                 <p class="body-header">Történész műhely</p>
                 <p>Az 1984-ben alapított műhely a történelemtudomány és az ahhoz kapcsolódó tudományszakok területén végez oktatói és kutatómunkát. A kurzusok szervesen kiegészítik a műhelytagok egyetemi curriculumát: műhelyszemináriumainkon és a havi rendszerességgel tartott műhelyelőadásokon az ELTE oktatói és meghívott külső előadók segítségével igyekeznek tovább mélyíteni tagjaik egyetemi tanulmányaik során elsajátított ismereteit.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tortenesz-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tortenesz-muhely">Tudj meg többet...</a>
             </div>
         </div>
     </div>
@@ -355,28 +356,28 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
     <!-- TTK -->
     <div id = "ttk" class = "tab flex-container responsive-column" style="display:none">
         <div class = "inner-buttons flex-container column">
-            <div class = "button ttk-tab-button flex-item flex-container" id = "bikem-button" onclick="openTab('bikem', 'ttk-tab')">
+            <div class = "button ttk-tab-button flex-item flex-container" id = "bikem-button" onclick="openTab('bikem', 'ttk-tab'); saveWorkshop('bikem')">
                 <div class = "lower-border">Biológia&#8209;Kémia</div></div>
-            <div class = "button ttk-tab-button flex-item flex-container" id = "matfiz-button" onclick="openTab('matfiz', 'ttk-tab')">
+            <div class = "button ttk-tab-button flex-item flex-container" id = "matfiz-button" onclick="openTab('matfiz', 'ttk-tab'); saveWorkshop('matfiz')">
                 <div class = "lower-border">Matek&#8209;Fizika</div></div>
-            <div class = "button ttk-tab-button flex-item flex-container" id = "mendol-button" onclick="openTab('mendol', 'ttk-tab')">
+            <div class = "button ttk-tab-button flex-item flex-container" id = "mendol-button" onclick="openTab('mendol', 'ttk-tab'); saveWorkshop('mendol')">
                 <div class = "lower-border">Földrajz&#8209;Földtud</div></div>
         </div>
         <div class = "inner-text">
             <div id = "bikem" class = "ttk-tab" style="display:none">
                 <p class="body-header">Biológia&ndash;Kémia műhely</p>
                 <p>A biológia és a kémia napjaink leggyorsabban fejlődő tudományterületei közé tartoznak, ezért nagy hangsúlyt fordítanak arra, hogy a Collegiumba felvételt nyert tehetséges hallgatók megismerkedjenek a két terület aktuális kérdéseivel és legújabb vívmányaival. A műhelytagok nagy része már az egyetem évei alatt bekapcsolódik valamilyen kutatásba az ELTE TTK Biológiai vagy Kémiai Intézetének valamelyik tanszékén, az SE, illetve az ELKH TTK vagy KOKI valamelyik kutatócsoportjában. 2012 óta minden nyáron a Műhely szerves része az Eötvös Természettudományos Tábor szervezői csapatának.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/biologia-kemia-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/biologia-kemia-muhely">Tudj meg többet...</a>
             </div>
             <div id = "matfiz" class = "ttk-tab" style="display:none">
                 <p class="body-header">Matematika&ndash;Fizika műhely</p>
                 <p>A Collegiumba felvételt nyert matematikus és fizikus hallgatók szakmai tevékenységét a 2003-ban önálló műhellyé alakuló műhely fogja össze, amely a Collegium egyik legnépesebb közösségét alkotja. Fontos cél, hogy a foglalkozásokon a matematika és a fizika aktuális kutatási témáival is megismerkedhessenek a résztvevők: ez később nagy segítséget jelenthet a saját kutatási téma kiválasztásához, és a collegisták önálló kutatásának támogatása is fontos feladat előadási lehetőségek biztosításával, szakmai együttműködések megszervezésével.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/matematika-fizika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/matematika-fizika-muhely">Tudj meg többet...</a>
             </div>
             <div id = "mendol" class = "ttk-tab" style="display:none">
-                <p class="body-header">Mendöl Tibor Földrajz&ndash;Földtudomány&ndash; Környezettudomány műhely</p>
+                <p class="body-header">Mendöl Tibor Földrajz&ndash;Földtudomány&ndash;Környezettudomány műhely</p>
                 <p>A műhely mindazon földrajz, földtudományi, illetve környezettudományi szakokon, szakpárokban tanuló hallgatók jelentkezését várja, akik az egyetemi óráikon felül szeretnének új szemléletekkel, többlet tudással gazdagodni. A műhelyórák, illetve a különböző terepgyakorlatok remek fejlődési lehetőséget nyújtanak a tanulni vágyók számára, és a szakmai életen felül a műhely lényeges része a nagyszerű közösségi élet is: szabadidős tevékenységként kirándulások, túrák, egyéb programok kerülnek megrendezésre. A műhely rendelkezik egy nagy méretű könyvtárral is, ahol akár 100 éves könyvekből is lehet tanulni.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/mendol-tibor-foldrajz-foldtudomany-kornyezettudomany-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/mendol-tibor-foldrajz-foldtudomany-kornyezettudomany-muhely">Tudj meg többet...</a>
             </div>
         </div>
     </div>
@@ -392,7 +393,7 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
             <div id = "info" class = "ik-tab" style="display:none">
                 <p class="body-header">Informatikai Műhely</p>
                 <p>A 2004-ben alapított műhely a tudós, önálló kutatásaikkal is kitűnő, hivatásukat szerető informatikusok képzését tekinti feladatának. A collegiumi rendszergazdák, akik az informatikai rendszereket és internetes hálózatot fejlesztik az épületben, szinte mind műhelytagok, akik így sokat tanulnak szerverüzemeltetésről vagy az internetes hálózatok működéséről. A tagok gyakran vesznek részt és érnek el jó eredményeket a Tudományos Diákköri Konferenciákon, valamint sok órát tartanak az egyetemen. </p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/informatika-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/informatika-muhely">Tudj meg többet...</a>
             </div>
         </div>
     </div>
@@ -408,7 +409,7 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
             <div id = "tarstud" class = "tatk-tab" style="display:none">
                 <p class="body-header">Társadalomtudományi műhely</p>
                 <p>A Társadalomtudományi műhely a Collegium egyik legfiatalabb és az egyik legszínesebb, sokszor személyre szabott programokat kínáló műhelye. Célja, hogy előremozdítsa az egyetem kiemelkedő tehetségű és szorgalmú hallgatóinak elsősorban tudományos pályáját, de hozzásegíti egyéb karrierlehetőségekhez is. A hallgatók a legkülönfélébb szakterületekről érkeznek, munkánk során pedig igyekszünk mindnyájuk számára kielégítő, későbbi elhelyezkedésük szempontjából hasznos, sőt piacképes képzést nyújtani.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tarsadalomtudomanyi-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/tarsadalomtudomanyi-muhely">Tudj meg többet...</a>
             </div>
         </div>
     </div>
@@ -424,7 +425,7 @@ addEventListener("DOMContentLoaded", (event) => { //opens both (if exists, but d
             <div id = "gazdtud" class = "gtk-tab" style="display:none">
                 <p class="body-header">Gazdaságtudományi műhely</p>
                 <p>A 2020-ban alapított műhely a Collegium nagy múltú hagyományainak, célkitűzéseinek megfelelően a széles látókörű, szakmailag kiemelkedő tudással rendelkező, elsősorban gazdálkodástudományi területen tanulmányokat folytató hallgatók tehetséggondozását tekinti feladatának. Nagy hangsúlyt fektet a collegisták önálló kutatásának (TDK dolgozat, szakdolgozat) támogatására többek között előadási lehetőségek biztosításával, valamint szakmai együttműködések megszervezésével és egy szakmailag elkötelezett közösséget fenntartva.</p>
-                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/gazdtud-muhely">Tudj meg többet</a>
+                <a class="learn" href="https://eotvos.elte.hu/szakmai-munka/muhelyek/gazdtud-muhely">Tudj meg többet...</a>
             </div>
         </div>
     </div>
